@@ -1,0 +1,72 @@
+
+<% include blocks/studheader.ejs %>
+
+		<!-- Contact -->
+		<section id="contact-us">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="title">
+							<h3>Ask Question </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<div class="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+						
+							<form id="contactform" action="/student/saveques" method ="post" class="validateform" name="send-contact">
+								<div class="row">
+									<div >
+										
+										<textarea name="qus"  placeholder="Your Question" class="form-control"></textarea>
+										</div>
+									</div>
+									
+										<p class="row">
+											<button class="btn btn-info" type="submit">Ask Question</button>
+											
+										</p>
+									</div>
+									<div>
+										<% QAdata.forEach((obj)=>{  %>
+
+											<div>
+												<table>
+												<tr><th><b><%=obj.qus%></b></th></tr>
+                                                 
+												<tr><td>
+							                            <div style="display:inline-block;margin-top:8px;float:left;">
+														<% if (obj.profile_pic=="" || obj.profile_pic==undefined) { %>
+														   <img src='/img/protfolio6.jpg' border-radius="10px" class='userpic' height="60" width="60" style="border-radius: 100%;">
+														<% }else{ %>
+														   <img src='/userpic/<%=uid%>/<%=obj.profile_pic%>' class='userpic' height="60" width="60"   style="border-radius: 100%;">
+														<% } %>	
+													    </div>  
+                                                        <div style="display:inline-block;margin-left:4px" >
+														<b style="font-size:12px;" ><%=obj.name%></b><br>
+													    <span  style="font-size:10px;">Answered on <%=(obj.ans_date).toISOString().slice(0,10)%></span> 
+													    </div>  
+													</td></tr>
+                                                <tr><td>
+												        <p><%=obj.ans%></p>
+											    </td></tr>
+												
+											</table>
+											</div>
+										<%})%>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+		<!-- Contact -->
+<% include blocks/footer.ejs %>

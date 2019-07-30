@@ -1,0 +1,50 @@
+<% include blocks/header.ejs %>
+		
+		<!-- Contact -->
+		<section id="contact-us">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="title">
+							<h3>Login <span>User</span></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<div class="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+						
+							<form id="contactform" action="/user/login" method ="post" class="validateform" name="send-contact">
+								<div class="row">
+									<div class="col-lg-4 field">
+										<input type="text" name="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+										<div class="validation">
+										</div>
+									</div>
+									<div class="col-lg-4 field">
+										<input type="password" class='form-control'  name="password" placeholder="Password" data-rule="maxlen:4" data-msg="Please enter at least 4 chars" />
+										<div class="validation">
+										</div>
+                                    </div>
+                                
+                                 
+										<p>
+											<button class="btn btn-info" type="submit">Login User</button>
+										</p>
+										<span color="red"><%=msg%></span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+		<!-- Contact -->
+		
+<% include blocks/footer.ejs %>

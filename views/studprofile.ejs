@@ -1,0 +1,50 @@
+<% include blocks/studheader.ejs %>
+
+		<!-- Contact -->
+		<section id="contact-us">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="title">
+							<h3>Profile <span><%=name%></span></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<div class="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+						
+							<form id="contactform" action="/student/upload" method="POST" class="validateform" name="send-contact" enctype="multipart/form-data" >
+
+							
+									<div class='col-lg-2 col-md-2 col-sm-2'>
+							
+									<% if (pic=="" || pic==undefined) { %>
+							           <img src='/img/protfolio6.jpg' class='userpic' height="200" width="220" style="border-radius: 100%;">
+						            <% }else{ %>
+							           <img src='/userpic/<%=uid%>/<%=pic%>' class='userpic' height="200" width="220" style="border-radius: 100%;">
+						            <% } %>	
+							        </div>
+									<div class='col-lg-6 col-md-6 col-sm-6'>
+								        <input  type="file" name="pic" class='form-control'>					
+								     </div>	
+									
+								</div>									
+										<p>
+											<button class="btn btn-info" type="submit">Upload Profile</button>	
+										</p>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+		<!-- Contact -->
+<% include blocks/footer.ejs %>
